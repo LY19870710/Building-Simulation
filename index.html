@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Building Simulation 2026</title>
+<title>Building Simulation 2024–2026</title>
 <style>
 :root {
   --bg: #f0fdf4;
@@ -405,7 +405,7 @@ body {
   <div class="header-inner">
     <div>
       <h1>Building Simulation</h1>
-      <p>Volume 19 (2026) — Article Index & Search</p>
+      <p>Volumes 17–19 (2024–2026) — Article Index & Search</p>
     </div>
   </div>
 </header>
@@ -428,7 +428,7 @@ body {
 </div>
 
 <div class="footer">
-  Building Simulation &copy; 2026 — Data from <a href="https://www.sciopen.com" target="_blank">SciOpen</a>
+  Building Simulation &copy; 2024–2026 — Data from <a href="https://www.sciopen.com" target="_blank">SciOpen</a>
 </div>
 
 <script>
@@ -565,14 +565,14 @@ function render() {
     });
     const shortNames = formattedAuthors.join(', ');
     const kws = (a.keywords||[]).slice(0,5).map(k => `<span class="kw">${highlight(k.replace(/<[^>]+>/g, ''), currentQuery)}</span>`).join('');
-    const volIssue = (a.volume || a.issue) ? `Vol.${a.volume||'?'} Issue ${a.issue||'?'}` : '';
+    const volIssue = (a.volume || a.issue) ? `Vol.${a.volume||'?'} Iss. ${a.issue||'?'}` : '';
 
     return `
     <div class="card" data-idx="${i}">
       <div class="card-head" onclick="toggle(this.parentElement)">
         <div class="card-title">${highlight(a.title.replace(/<[^>]+>/g, ''), currentQuery)}</div>
         <div class="badges">
-          <span class="badge-year">2026</span>
+          <span class="badge-year">${a.year || '?'}</span>
           ${a.type ? `<span class="badge-type">${esc(a.type)}</span>` : ''}
           ${volIssue ? `<span class="badge-type">${esc(volIssue)}</span>` : ''}
           ${a.doi ? `<button class="btn-expand" style="color:#27ae60" onclick="event.stopPropagation();downloadRIS(${i})">Download RIS</button>` : ''}
